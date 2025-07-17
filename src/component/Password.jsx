@@ -25,7 +25,7 @@ function Password({ placeholder, icon, hidePassword, showPassword }) {
                 </span>
             </div> */}
 
-            <div className={`inputCustom floating-label-wrapper mb-3  ${value ? 'filled' : ''} `}>
+            <div className={`inputCustom floating-label-wrapper ${value ? 'filled' : ''} `} style={{ marginBottom: '20px' }}>
                 <div className="icon text-danger">{icon}</div>
                 {/* <PiLockKey className="text-danger icon" /> */}
                 <input
