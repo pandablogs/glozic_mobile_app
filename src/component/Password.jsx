@@ -1,5 +1,5 @@
-import { PiLockKey } from "react-icons/pi";
-import { BsEye, BsEyeSlash } from "react-icons/bs";
+// import { PiLockKey } from "react-icons/pi";
+// import { BsEye, BsEyeSlash } from "react-icons/bs";
 import { useState } from 'react';
 import '../assets/css/text.css';
 

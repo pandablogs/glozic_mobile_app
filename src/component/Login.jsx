@@ -8,7 +8,7 @@ import Password from './Password';
 import Button from './Button';
 import { useEffect, useState } from "react";
 
-function Login() {
+function Login({ showInstall, handleInstallClick }) {
 
     const [config, setconfig] = useState('');
 
@@ -54,8 +54,10 @@ function Login() {
                     </div>
                     <div className="text-center" style={{ width: '100%', maxWidth: '430px', fontSize: '16px', marginTop: '35px', fontWeight: '600' }}>
                         <Link to="#" className="text-decoration-none me-1" style={{ color: '#e61a17' }}>Register</Link>|
-                        <Link to="#" className="text-decoration-none mx-1" style={{ color: '#e61a17' }}>Forgot Password</Link>|
-                        <Link to="#" className="text-decoration-none ms-1" style={{ color: '#e61a17' }}>Install App</Link>
+                        <Link to="#" className="text-decoration-none mx-1" style={{ color: '#e61a17' }}>Forgot Password</Link>
+                        {showInstall && (
+                            <Link onClick={handleInstallClick} to="#" className="text-decoration-none ms-1" style={{ color: '#e61a17' }}>| Install App</Link>
+                        )}
                     </div>
                 </div>
             </div>

@@ -11,3 +11,11 @@ createRoot(document.getElementById('root')).render(
     </Router>
   </StrictMode>,
 )
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then((reg) => { '' })
+      .catch((err) => console.error("Service Worker failed", err));
+  });
+}

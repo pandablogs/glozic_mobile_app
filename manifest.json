@@ -1,0 +1,21 @@
+{
+    "name": "Heng Huat",
+    "short_name": "HengHuat",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#fafcfa",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "/image/icon-192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/image/icon-512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
+}
