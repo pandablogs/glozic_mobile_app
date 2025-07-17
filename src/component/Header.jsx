@@ -25,7 +25,7 @@ function Header() {
             </div> */}
 
             <div className="bg-white px-4 d-flex align-items-center gap-3 " style={{ paddingTop: '22px', paddingBottom: '22px', height: '106px' }}>
-                <img src={logo} alt="logo" className='object-fit-contain ms-3' style={{ width: '260px' }} />
+                <img src={logo} alt="logo" className='object-fit-contain ms-3' style={{ width: '200px' }} />
                 {/* <img src={logo} alt="logo" className='object-fit-contain ms-3' style={{ width: '60%' }} /> */}
                 {/* <h1 className="text-danger fw-bold display-5 mb-0" style={{ fontFamily: "'Montserrat', sans-serif" }}>
                     SAH
