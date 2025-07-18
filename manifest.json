@@ -1,8 +1,7 @@
 {
     "name": "Glozic",
     "short_name": "Glozic",
-    "start_url": "/",
-    "scope": "/",
+    "start_url": ".",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#fafcfa",
