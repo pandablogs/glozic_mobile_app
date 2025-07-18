@@ -56,7 +56,7 @@ function Login({ showInstall, handleInstallClick }) {
                         <Link to="#" className="text-decoration-none me-1" style={{ color: '#e61a17' }}>Register</Link>|
                         <Link to="#" className="text-decoration-none mx-1" style={{ color: '#e61a17' }}>Forgot Password</Link>
                         {showInstall && (
-                            <Link onClick={handleInstallClick} to="#" className="text-decoration-none ms-1" style={{ color: '#e61a17' }}>| Install App</Link>
+                            <Link onClick={handleInstallClick} to="#" className="text-decoration-none ms-1" style={{ color: '#e61a17' }}><span style={{ color: 'black' }}>|</span> Install App</Link>
                         )}
                     </div>
                 </div>
