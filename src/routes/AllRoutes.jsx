@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import logo from '../assets/images/logo.png'
 import '../App.css';
 
-function AllRoutes({ showInstall, handleInstallClick }) {
+function AllRoutes({  }) {
 
     const [loading, setloading] = useState(true);
 
@@ -35,8 +35,7 @@ function AllRoutes({ showInstall, handleInstallClick }) {
                     <>
                         <Header />
                         <Routes>
-                            <Route path="/" element={<Login showInstall={showInstall}
-                                handleInstallClick={handleInstallClick} />}></Route>
+                            <Route path="/" element={<Login />}></Route>
                         </Routes>
                     </>
             }

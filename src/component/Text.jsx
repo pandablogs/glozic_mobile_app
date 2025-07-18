@@ -1,10 +1,9 @@
 // import { IoMailOutline } from "react-icons/io5";
 import { useState } from 'react';
 import '../assets/css/text.css';
+import { ErrorMessage, Field } from 'formik';
 
-function Text({ icon, placeholder }) {
-
-    const [value, setValue] = useState('');
+function Text({ icon, placeholder, name }) {
 
     return (
         <>
@@ -13,17 +12,18 @@ function Text({ icon, placeholder }) {
             {/* <IoMailOutline /> */}
             {/* <input type="email" placeholder={placeholder} className="form-control input border-0 shadow-none loginInput" />
             </div> */}
-
-            <div className={`inputCustom floating-label-wrapper ${value ? 'filled' : ''}`} style={{ marginBottom: '20px' }}>
-                <div className="icon text-danger">{icon}</div>
-                <input
-                    type="email"
-                    className="form-control input border-0 shadow-none"
-                    value={value}
-                    onChange={(e) => setValue(e.target.value)}
-                    placeholder=" "
-                />
-                <label className="floating-label">{placeholder}</label>
+            <div style={{ marginBottom: '20px' }}>
+                <div className={`inputCustom floating-label-wrapper ${name ? '' : 'filled'}`} >
+                    <div className="icon text-danger">{icon}</div>
+                    <Field
+                        type="email"
+                        className="form-control input border-0 shadow-none"
+                        name={name}
+                        placeholder=" "
+                    />
+                    <label className="floating-label">{placeholder}</label>
+                </div>
+                <ErrorMessage className='red' component='span' name={name} style={{ fontSize: '14px' }} />
             </div>
         </>
     )

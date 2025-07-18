@@ -2,11 +2,11 @@
 // import { BsEye, BsEyeSlash } from "react-icons/bs";
 import { useState } from 'react';
 import '../assets/css/text.css';
+import { ErrorMessage, Field } from 'formik';
 
-function Password({ placeholder, icon, hidePassword, showPassword }) {
+function Password({ placeholder, icon, hidePassword, showPassword, name }) {
 
     const [showHidePassword, setShowHidePassword] = useState(false);
-    const [value, setValue] = useState('');
 
     return (
         <>
@@ -24,24 +24,25 @@ function Password({ placeholder, icon, hidePassword, showPassword }) {
                     {showHidePassword ? <div className="text-danger">{hidePassword}</div> : <div className="text-danger">{showPassword}</div>}
                 </span>
             </div> */}
-
-            <div className={`inputCustom floating-label-wrapper ${value ? 'filled' : ''} `} style={{ marginBottom: '20px' }}>
-                <div className="icon text-danger">{icon}</div>
-                {/* <PiLockKey className="text-danger icon" /> */}
-                <input
-                    type={showHidePassword ? "text" : "password"}
-                    placeholder=" "
-                    value={value}
-                    onChange={(e) => setValue(e.target.value)}
-                    className="form-control input border-0 shadow-none"
-                />
-                <div
-                    className="toggle-password"
-                    onClick={() => setShowHidePassword(!showHidePassword)}
-                >
-                    {showHidePassword ? <span className="red">{hidePassword}</span> : <span className="red">{showPassword}</span>}
+            <div style={{ marginBottom: '20px' }}>
+                <div className={`inputCustom floating-label-wrapper ${name ? '' : 'filled'} `}>
+                    <div className="icon text-danger">{icon}</div>
+                    {/* <PiLockKey className="text-danger icon" /> */}
+                    <Field
+                        type={showHidePassword ? "text" : "password"}
+                        placeholder=" "
+                        name={name}
+                        className="form-control input border-0 shadow-none"
+                    />
+                    <div
+                        className="toggle-password"
+                        onClick={() => setShowHidePassword(!showHidePassword)}
+                    >
+                        {showHidePassword ? <span className="red">{hidePassword}</span> : <span className="red">{showPassword}</span>}
+                    </div>
+                    <label className="floating-label">{placeholder}</label>
                 </div>
-                <label className="floating-label">{placeholder}</label>
+                <ErrorMessage className='red' component='span' name={name} style={{ fontSize: '14px' }} />
             </div>
         </>
     )

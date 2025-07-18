@@ -1,9 +1,9 @@
 
-function Button({ name, bgColor }) {
+function Button({ name, bgColor, type }) {
 
     return (
         <>
-            <button className="btn rounded-pill  cs_btn text-white w-100" style={{ background: bgColor }}>{name}</button>  
+            <button type={type} className="btn rounded-pill  cs_btn text-white w-100" style={{ background: bgColor }}>{name}</button>
         </>
     )
 }
