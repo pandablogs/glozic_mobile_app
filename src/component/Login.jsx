@@ -11,7 +11,7 @@ import { Form, Formik } from "formik";
 import axios from "axios";
 import * as Yup from 'yup';
 
-function Login() {
+function Login({ showButton, handleInstallClick }) {
 
     const [config, setconfig] = useState('');
 
@@ -104,9 +104,9 @@ function Login() {
                     <div className="text-center" style={{ width: '100%', maxWidth: '430px', fontSize: '16px', marginTop: '35px', fontWeight: '600' }}>
                         <Link to="#" className="text-decoration-none me-1" style={{ color: '#e61a17' }}>Register</Link>|
                         <Link to="#" className="text-decoration-none mx-1" style={{ color: '#e61a17' }}>Forgot Password</Link>
-                        
-                            {/* <Link  to="#" className="text-decoration-none ms-1" style={{ color: '#e61a17' }}><span style={{ color: 'black' }}>|</span> Install App</Link> */}
-                        
+                        {showButton && (
+                            <Link onClick={handleInstallClick} className="text-decoration-none ms-1" style={{ color: '#e61a17' }}><span style={{ color: 'black' }}>|</span> Install App</Link>
+                        )}
                     </div>
                 </div>
             </div>
