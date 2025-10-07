@@ -4,6 +4,8 @@ import Header from "../component/Header";
 import { useEffect, useState } from "react";
 import logo from '../assets/images/logo.png'
 import '../App.css';
+import Register from "../component/Register";
+import ForgetPassword from "../component/ForgetPassword";
 
 function AllRoutes({ showButton, handleInstallClick }) {
 
@@ -36,6 +38,8 @@ function AllRoutes({ showButton, handleInstallClick }) {
                         <Header />
                         <Routes>
                             <Route path="/" element={<Login showButton={showButton} handleInstallClick={handleInstallClick} />}></Route>
+                            <Route path="/register" element={<Register />}></Route>
+                            <Route path="/forget-password" element={<ForgetPassword />}></Route>
                         </Routes>
                     </>
             }

@@ -1,5 +1,4 @@
 // import { IoMailOutline } from "react-icons/io5";
-import { useState } from 'react';
 import '../assets/css/text.css';
 import { ErrorMessage, Field } from 'formik';
 
@@ -16,7 +15,7 @@ function Text({ icon, placeholder, name }) {
                 <div className={`inputCustom floating-label-wrapper ${name ? '' : 'filled'}`} >
                     <div className="icon text-danger">{icon}</div>
                     <Field
-                        type="email"
+                        type="text"
                         className="form-control input border-0 shadow-none"
                         name={name}
                         placeholder=" "

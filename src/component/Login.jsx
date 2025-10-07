@@ -25,8 +25,7 @@ function Login({ showButton, handleInstallClick }) {
         password: Yup.string().required('Password is Required')
     })
 
-    const onSubmitAction = async (values) => {
-        console.log('values', values);
+    const onSubmitAction = async (values, { resetForm }) => {
         try {
             const payload = {
                 email: values?.email || '',
@@ -44,7 +43,7 @@ function Login({ showButton, handleInstallClick }) {
                     'Tenant': 'sky-dev'
                 }
             })
-
+            resetForm();
             console.log('res', res)
 
         } catch (error) {
@@ -59,15 +58,15 @@ function Login({ showButton, handleInstallClick }) {
             value: '#f5f5f5'
         };
 
-        if (response.type === 'image') {
+        if (response?.type === 'image') {
             setconfig({
-                backgroundImage: `url(${response.value})`,
+                backgroundImage: `url(${response?.value})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
             });
-        } else if (response.type === 'color') {
+        } else if (response?.type === 'color') {
             setconfig({
-                backgroundColor: response.value,
+                backgroundColor: response?.value,
             });
         }
     }, []);
@@ -102,8 +101,8 @@ function Login({ showButton, handleInstallClick }) {
                     </Formik>
 
                     <div className="text-center" style={{ width: '100%', maxWidth: '430px', fontSize: '16px', marginTop: '35px', fontWeight: '600' }}>
-                        <Link to="#" className="text-decoration-none me-1" style={{ color: '#e61a17' }}>Register</Link>|
-                        <Link to="#" className="text-decoration-none mx-1" style={{ color: '#e61a17' }}>Forgot Password</Link>
+                        <Link to='/register' className="text-decoration-none me-1" style={{ color: '#e61a17' }}>Register</Link>|
+                        <Link to="/forget-password" className="text-decoration-none mx-1" style={{ color: '#e61a17' }}>Forgot Password</Link>
                         {showButton && (
                             <Link onClick={handleInstallClick} className="text-decoration-none ms-1" style={{ color: '#e61a17' }}><span style={{ color: 'black' }}>|</span> Install App</Link>
                         )}
