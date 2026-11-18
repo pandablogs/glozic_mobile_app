@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "node init &&  vite",
-    "dev-ip": "node init && vite --host",
-    "start": "node init &&  vite",
-    "build": "node init &&  vite build",
+    "dev": " vite",
+    "dev-ip": "vite --host",
+    "start": " vite",
+    "build": " vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
